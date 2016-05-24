@@ -30,6 +30,15 @@ class UsersService(object):
             .filter(User.email == email)\
             .first()
 
+    def add(self, username, email):
+        user = User(
+            username=username,
+            email=email
+            )
+        self.dbsession.add(user)
+        self.dbsession.flush()
+        return user
+
 
 @App.service('users')
 def users_service(registry, settings):
