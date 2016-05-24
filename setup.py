@@ -24,6 +24,7 @@ install_requires = [
     'more.services',
     'zope.sqlalchemy',
     'sqlalchemy',
+    'click',
     'gunicorn'
     ]
 
@@ -75,6 +76,7 @@ setup(
     entry_points={
         'console_scripts': [
             'run-demo = morepath_services.run:run',
+            'init-database = morepath_services.cli:initdb'
         ]
     },
     )
